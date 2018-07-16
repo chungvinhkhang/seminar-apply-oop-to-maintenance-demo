@@ -1,0 +1,40 @@
+﻿@model List<Lyd.MoopDemo.PmsCore.Guest>
+    @{
+    ViewData["Title"] = "Quản lý hồ sơ khách";
+    }
+
+
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2>@ViewData["Title"]</h2>
+        </div>
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Ten</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(Model.Count == 0)
+                    {
+                    <tr>
+                        <td colspan="2">Khong</td>
+                    </tr>
+                    }
+                    else
+                    {
+                    foreach (var guest in Model)
+                    {
+                    <tr>
+                        <td>@guest.GuestCode</td>
+                        <td>@guest.GuestName</td>
+                    </tr>
+                    }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
