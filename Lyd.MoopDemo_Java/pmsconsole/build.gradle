@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'lyd.demo'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':pmscore')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+//task copyToLib(type: Copy) {
+//    into "$buildDir/libs"
+//    from configurations.runtime
+//}
+
+//build.dependsOn(copyToLib)
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'lyd.demo.pmsconsole.PmsConsoleProgram'
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}

@@ -1,0 +1,5 @@
+rootProject.name = 'pms-demo'
+
+include 'pmscore'
+include 'pmsconsole'
+include 'web'

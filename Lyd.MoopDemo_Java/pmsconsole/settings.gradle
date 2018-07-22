@@ -1,0 +1,5 @@
+rootProject.name = 'pmsconsole'
+
+
+include ':pmscore'
+project(':pmscore').projectDir = file('../pmscore')

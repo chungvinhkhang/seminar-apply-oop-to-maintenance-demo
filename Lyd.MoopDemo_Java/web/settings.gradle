@@ -1,0 +1,5 @@
+rootProject.name = 'pmsweb'
+
+
+include ':pmscore'
+project(':pmscore').projectDir = file('../pmscore')
